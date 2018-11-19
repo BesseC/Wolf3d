@@ -81,7 +81,7 @@ t_text			get_texture_datas(char *path)
 
 t_text			*get_texture(void)
 {
-	static t_text textures[NB_TEXT];
+	static t_text textures[NB_TEXT + 2];
 
 	textures[0] = get_texture_datas("./textures/cells02.jpg");
 	textures[1] = get_texture_datas("./textures/images-2.jpeg");
@@ -89,5 +89,8 @@ t_text			*get_texture(void)
 		get_texture_datas("./textures/GoldGlass.jpg");
 	textures[3] = get_texture_datas("./textures/images.jpeg");
 	textures[4] = get_texture_datas("./textures/images2.jpg");
+	textures[5] = get_texture_datas("./textures/Vert.jpg");
+	textures[6] = get_texture_datas("./textures/woodfloor.jpg");
+	textures[7] = get_texture_datas("./textures/images copy.jpeg");
 	return (textures);
 }

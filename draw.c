@@ -58,16 +58,15 @@ void	draw_wall(t_wolf *wolf, t_env *env, int x)
 {
 	int		color;
 	int		y;
-	double	wallx;
 	int		d;
 
 	y = wolf->draw_start;
 	if (wolf->side == 0)
-		wallx = wolf->pos.y + wolf->perp_wall_dist * wolf->ray_dir.y;
+		wolf->wallx = wolf->pos.y + wolf->perp_wall_dist * wolf->ray_dir.y;
 	else
-		wallx = wolf->pos.x + wolf->perp_wall_dist * wolf->ray_dir.x;
-	wallx -= floor((wallx));
-	wolf->tex_x = (int)(wallx * (double)(env->text->img_w));
+		wolf->wallx = wolf->pos.x + wolf->perp_wall_dist * wolf->ray_dir.x;
+	wolf->wallx -= floor((wolf->wallx));
+	wolf->tex_x = (int)(wolf->wallx * (double)(env->text->img_w));
 	if (wolf->side == 0 && wolf->ray_dir.x > 0)
 		wolf->tex_x = env->text->img_w - wolf->tex_x - 1;
 	if (wolf->side == 1 && wolf->ray_dir.y < 0)
@@ -80,6 +79,7 @@ void	draw_wall(t_wolf *wolf, t_env *env, int x)
 		set_pixel(x, y, color, env->surf);
 		y++;
 	}
+	draw_floor(wolf, env, x);
 }
 
 void	draw(t_wolf *wolf, t_env *env, int x)

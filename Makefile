@@ -6,18 +6,18 @@
 #    By: cbesse <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/01 12:13:48 by cbesse            #+#    #+#              #
-#    Updated: 2018/10/26 12:21:12 by cbesse           ###   ########.fr        #
+#    Updated: 2018/11/19 15:14:19 by cbesse           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Wolf3d
-SRC = init.c main.c dda.c draw.c texture.c parseur.c
+SRC = init.c main.c dda.c draw.c texture.c parseur.c draw_floor.c
 SRC_TEST = test.c
 OBJ = $(SRC:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
 CC = cc -g3
 
-FLAGS = -Wall -Wextra -Werror `sdl2-config --cflags`
+FLAGS = `sdl2-config --cflags`
 LIB = -Llibft -lft -lSDL2_image `sdl2-config --libs`
 
 all : $(NAME)

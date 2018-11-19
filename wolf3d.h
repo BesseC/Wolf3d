@@ -6,7 +6,7 @@
 /*   By: cbesse <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 12:54:20 by cbesse            #+#    #+#             */
-/*   Updated: 2018/10/26 12:06:37 by cbesse           ###   ########.fr       */
+/*   Updated: 2018/11/19 15:26:44 by cbesse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define NB_TILES 15
 # define WIDTH 1024
 # define HEIGHT 1024
-# define NB_TEXT 5
+# define NB_TEXT 6
 # define MAPSIZE 64
 # include <SDL.h>
 # include <SDL_image.h>
@@ -52,6 +52,8 @@ typedef struct	s_vec2
 typedef struct	s_wolf
 {
 	t_vec2		dir;
+	t_vec2		floor_wall;
+	t_vec2		current_floor;
 	t_vec2		map;
 	t_vec2		ray_dir;
 	t_vec2		side_dist;
@@ -64,13 +66,20 @@ typedef struct	s_wolf
 	int			side;
 	double		camera_x;
 	double		tmp;
+	double		dist_wall;
+	double		dist_player;
+	double		current_dist;
 	int			color;
+	double		weight;
 	int			draw_start;
 	int			draw_end;
 	int			line_height;
 	int			tex_x;
 	int			tex_y;
+	int			floortex_x;
+	int			floortex_y;
 	int			**worldmap;
+	double		wallx;
 }				t_wolf;
 
 void			iniwolf(t_wolf *wolf);
@@ -83,4 +92,7 @@ t_text			*get_texture(void);
 int				init_env(t_wolf *env, char **argv, int argc);
 void			set_map(t_wolf *wolf);
 void			ft_quit(char *str);
+int				uv_wall(t_text text, int x, int y);
+void			set_pixel(int x, int y, int color, SDL_Surface *s);
+void			draw_floor(t_wolf *wolf, t_env *env, int x);
 #endif
