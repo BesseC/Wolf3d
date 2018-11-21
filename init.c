@@ -49,7 +49,7 @@ void	ini_sdl(t_env *env)
 		exit(1);
 	}
 	env->window = SDL_CreateWindow("Wolf3D", SDL_WINDOWPOS_UNDEFINED,
-			SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_RESIZABLE);
+			SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_INPUT_GRABBED);
 	env->surf = SDL_GetWindowSurface(env->window);
 	ft_memset(env->surf->pixels, 0, WIDTH * HEIGHT * 4);
 	env->state = (Uint8*)SDL_GetKeyboardState(NULL);
