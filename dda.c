@@ -6,7 +6,7 @@
 /*   By: cbesse <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 11:12:49 by cbesse            #+#    #+#             */
-/*   Updated: 2018/10/24 12:44:35 by cbesse           ###   ########.fr       */
+/*   Updated: 2018/12/05 16:03:51 by cbesse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,4 @@ void	dda(t_wolf *wolf, t_env *env)
 		x++;
 	}
 	SDL_UpdateWindowSurface(env->window);
-	ft_memset(env->surf->pixels, 0xb0,
-			(sizeof(int) * env->surf->w * env->surf->h) / 2);
-	ft_memset(&(env->surf->pixels[(sizeof(int) * env->surf->w * env->surf->h)
-				/ 2]), 0x00, (sizeof(int) * env->surf->w * env->surf->h) / 2);
 }

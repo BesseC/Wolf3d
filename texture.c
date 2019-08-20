@@ -85,8 +85,7 @@ t_text			*get_texture(void)
 
 	textures[0] = get_texture_datas("./textures/cells02.jpg");
 	textures[1] = get_texture_datas("./textures/images-2.jpeg");
-	textures[2] =
-		get_texture_datas("./textures/GoldGlass.jpg");
+	textures[2] = get_texture_datas("./textures/GoldGlass.jpg");
 	textures[3] = get_texture_datas("./textures/images.jpeg");
 	textures[4] = get_texture_datas("./textures/images2.jpg");
 	textures[5] = get_texture_datas("./textures/Vert.jpg");
