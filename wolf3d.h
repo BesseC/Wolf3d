@@ -15,7 +15,7 @@
 # include "libft/includes/libft.h"
 # define MAPWIDTH 24
 # define MAPHEIGHT 24
-# define MOVESPEED 0.25
+# define MOVESPEED 0.24
 # define ROTSPEED 0.1
 # define NB_TILES 15
 # define WIDTH 1024

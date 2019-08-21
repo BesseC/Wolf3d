@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Wolf3d
+NAME = wolf3d
 SRC = init.c main.c dda.c draw.c texture.c parseur.c draw_floor.c
 SRC_TEST = test.c
 OBJ = $(SRC:.c=.o)
